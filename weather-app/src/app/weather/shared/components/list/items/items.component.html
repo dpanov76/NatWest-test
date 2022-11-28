@@ -1,0 +1,5 @@
+<h2>{{title}}</h2>
+<h3>{{subtitle}}</h3>
+<ng-container *ngFor="let item of data">
+  <app-item [item]="item"></app-item>
+</ng-container>

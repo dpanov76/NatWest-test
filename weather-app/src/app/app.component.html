@@ -1,0 +1,16 @@
+<h1>weather-app</h1>
+<div *ngIf="isLoading$ | async">...Loading</div>
+<div *ngIf="error$ | async">{{error$ | async}}</div>
+<form [formGroup] = "citySelectionForm">
+  <label>Select a City</label>
+  <select formControlName="cityName">
+    <option *ngFor="let city of cities$ | async" [ngValue]="city">{{city}}</option>
+  </select>
+</form>
+<div *ngIf="(weather$ | async) as selectedWeatherObservable">
+  <app-items
+    [title]="selectedWeatherObservable.city.name"
+    [subtitle]="selectedWeatherObservable.city.country"
+    [data]="selectedWeatherObservable.list"
+  ></app-items>
+</div>

@@ -1,9 +1,9 @@
-import { AppStateInterface } from '../state/app.state';
-import { createSelector } from '@ngrx/store';
+import {WeatherState} from '../state/app.state';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
 
-export const selectFeature = (state: AppStateInterface) => state;
+export const selectFeature = createFeatureSelector<WeatherState>('weather');
 
-export const selectCities = createSelector(
+export const Cities = createSelector(
   selectFeature,
   (state) => state.cities
 );
@@ -11,4 +11,19 @@ export const isLoadingSelector = createSelector(
   selectFeature,
   (state) => state.isLoading
 );
-//export const selectedCity = (state: AppStateInterface) => state.selectedCity;
+export const selectedCity = createSelector(
+  selectFeature,
+  (state) => state.selectedCity
+);
+export const CityInfo = createSelector(
+  selectFeature,
+  (state) => state.cityInfo
+);
+export const Weather = createSelector(
+  selectFeature,
+  (state) => state.weather
+);
+export const Error = createSelector(
+  selectFeature,
+  (state) => state.error
+);

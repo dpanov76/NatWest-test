@@ -18,3 +18,12 @@ export const getWeatherFailure = createAction(
   props<{ error: string }>()
   );
 
+export const getCitySuccess = createAction(
+  '[App] Get City success',
+  props<{ cityInfo: any }>()
+);
+
+export const getCityFailure = createAction(
+  '[App] Get City failure',
+  props<{ error: string }>()
+);
