@@ -1,6 +1,10 @@
-<p>{{weather.date | date}}</p>
-<p>{{weather.date | date:'shortTime'}}</p>
-<img src="{{weather.icon}}" alt="{{weather.description}}">
-<p>{{weather.temperature | number: '1.0-0'}} C<sup>o</sup></p>
-<p>{{weather.windSpeed}} m/s</p>
-<p>{{weather.description}}</p>
+<div class="card weather-app-card">
+  <div class="card-body weather-app-center">
+    <h5 class="card-title date">{{weather.date | date}}</h5>
+    <p class="card-text">Time: {{weather.date | date:'shortTime'}}</p>
+    <img src="{{weather.icon}}" alt="{{weather.description}}" class="weather-app-icon">
+    <span class="card-text d-block">Temperature: {{weather.temperature | number: '1.0-0'}} C<sup>o</sup></span>
+    <span class="card-text d-block">Wind Speed: {{weather.windSpeed}} m/s</span>
+    <p class="card-text">{{weather.description}}</p>
+  </div>
+</div>

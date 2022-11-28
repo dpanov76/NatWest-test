@@ -14,10 +14,27 @@ describe('ItemComponent', () => {
 
     fixture = TestBed.createComponent(ItemComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    component.item = {
+      dt_txt:'2022-11-28 18:00:00',
+      main:{
+        temp: 1
+      },
+      wind: {
+        speed: 100
+      },
+      weather:[
+        {
+          main: 'cloudy',
+          description: 'very cloudy',
+          icon: '10c'
+        }
+      ]
+    };
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.date').textContent).toBe('Nov 28, 2022');
   });
 });

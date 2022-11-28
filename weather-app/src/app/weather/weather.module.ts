@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { reducers } from './store/reducers/app.reducers';
 import { StoreModule } from '@ngrx/store';
-import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
 import { ItemComponent } from './shared/components/list/item/item.component';
 import { ItemsComponent } from './shared/components/list/items/items.component';
 import { DataService } from './shared/services/data.service';
@@ -13,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    DropdownComponent,
     ItemComponent,
     ItemsComponent
   ],
@@ -29,7 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     DataService
   ],
   exports: [
-    DropdownComponent,
     ItemComponent,
     ItemsComponent
   ]

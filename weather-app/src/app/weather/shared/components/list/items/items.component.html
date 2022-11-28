@@ -1,5 +1,7 @@
-<h2>{{title}}</h2>
-<h3>{{subtitle}}</h3>
-<ng-container *ngFor="let item of data">
-  <app-item [item]="item"></app-item>
-</ng-container>
+<h2 class="d-block weather-app-center">{{title}}</h2>
+<h3 class="d-block weather-app-center">{{subtitle}}</h3>
+<div class="d-flex weather-app-cards">
+  <ng-container *ngFor="let item of data">
+    <app-item [item]="item"></app-item>
+  </ng-container>
+</div>
